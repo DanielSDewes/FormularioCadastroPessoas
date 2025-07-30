@@ -31,7 +31,7 @@ Este é um sistema simples de cadastro de pessoas com interface web. O usuário 
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/DanielSDewes/FormularioCadastroPessoas
 cd seu-repositorio
 ```
 
