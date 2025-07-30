@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Pessoas</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Cadastro de Pessoas</h1>
+
+  <div id="mensagem" class="mensagem" style="display: none;"></div>
+
+  <form id="formPessoa"> <!-- Alterado -->
+    <input type="text" name="nome" placeholder="Nome" required>
+    <input type="text" name="cpf" placeholder="CPF" required>
+    <input type="text" name="cep" placeholder="CEP" id="cep" required>
+    <input type="text" name="rua" placeholder="Rua" id="rua">
+    <input type="text" name="cidade" placeholder="Cidade" id="cidade">
+    <input type="text" name="estado" placeholder="Estado" id="estado">
+    <button type="submit">Salvar</button>
+  </form>
+
+  <table>
+    <tr><th>Nome</th><th>CPF</th><th>CEP</th><th>Rua</th><th>Cidade</th><th>Estado</th><th>Ações</th></tr>
+    {% for pessoa in pessoas %}
+    <tr>
+      <td>{{ pessoa['nome'] }}</td>
+      <td>{{ pessoa['cpf'] }}</td>
+      <td>{{ pessoa['cep'] }}</td>
+      <td>{{ pessoa['rua'] }}</td>
+      <td>{{ pessoa['cidade'] }}</td>
+      <td>{{ pessoa['estado'] }}</td>
+      <td><a href="/delete/{{ pessoa['id'] }}">Excluir</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
